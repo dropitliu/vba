@@ -1,0 +1,9 @@
+Private Sub CommandButton1_Click()
+    s1 = ActiveSheet.Range("A2000").End(xlUp).Row
+    B1 = Application.WorksheetFunction.LinEst(ActiveSheet.Range("c2:" & "c" & s1), ActiveSheet.Range("b2:" & "b" & s1))
+    If B1(2) > 0 Then
+        MsgBox "y=" & Format(B1(1), "##.00") & "+" & Format(B1(2), "##.00") & "x"
+    Else    
+        MsgBox "y=" & Format(B1(1), "##.00") & "-" & Format(B1(2), "##.00") & "x"    
+    End If    
+End Sub
